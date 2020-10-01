@@ -14,7 +14,7 @@ author: Some Person
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Me: "about me"
+  About Me: "/aboutme"
   h1 : "https://hackerone.com/ninetynine"
 
 # --- Logo --- #
@@ -96,11 +96,11 @@ navbar-text-col: "#fff"
 navbar-border-col: "green"
 page-col: "#FFFFFF"
 text-col: "#404040"
-link-col: "#008AFF"
+link-col: "#558cc3"
 hover-col: "#558cc3"
 footer-col: "#233c63"
 footer-text-col: "#fff"
-footer-link-col: "#008AFF"
+footer-link-col: "#233c63"
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
