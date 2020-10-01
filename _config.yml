@@ -67,8 +67,8 @@ social-network-links:
 # Select which social network share links to show in posts
 share-links-active:
   twitter: true
- # facebook: true
- # linkedin: true
+ facebook: true
+ linkedin: true
  # vk: false
 
 # How to display the link to your website in the footer
@@ -126,7 +126,7 @@ footer-link-col: "#233c63"
 #gtag: ""
 
 # Fill in your Google Analytics ID to track your website using Google Analytics
-#google_analytics: ""
+google_analytics: "UA-177109579-1"
 
 # Google Tag Manager ID
 #gtm: ""
