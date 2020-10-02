@@ -9,13 +9,13 @@
 title: Infosec Blog
 
 # Your name to show in the footer
-author: ninetynine
+author: NinetyNine
 
 # --- List of links in the navigation bar --- #
 
 navbar-links:
   About Me: "/aboutme"
-  h1 : "https://hackerone.com/ninetynine"
+  #h1 : "https://hackerone.com/ninetynine"
 
 # --- Logo --- #
 
@@ -94,7 +94,7 @@ feed_show_tags: true
 navbar-col: "#233c63"
 navbar-text-col: "#fff"
 navbar-border-col: "#558cc3"
-page-col: "#FFFFFF"
+page-col: "#e6e6e6"
 text-col: "#404040"
 link-col: "#558cc3"
 hover-col: "#4568a1"
