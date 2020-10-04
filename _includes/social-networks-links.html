@@ -110,12 +110,15 @@
 
 {%- if site.social-network-links.xing -%}
   <li class="list-inline-item">
-    <a href="https://www.xing.com/profile/{{ site.social-network-links.xing }}" title="Xing">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
+    <a href="https://hackerone.com/{{ site.social-network-links.xing }}" title="hackerone">
+      <span class="" aria-hidden="true">
+        <img src="/asset/img/hackerone-onmouse.png"
+       onmouseover="this.src='/asset/img/hackerone-onmouseout.png'"
+       onmouseout="this.src='/asset/img/hackerone-onmouse.png'" height = 45px width=45px
+       alt=""
+  />
       </span>
-      <span class="sr-only">Xing</span>
+      <span class="sr-only">hackerone</span>
    </a>
   </li>
 {%- endif -%}
