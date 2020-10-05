@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Watch those requests!
+title: Watch your requests!
 subtitle: open redirect to a complete account takeover
 tags: [ssrf,bugbounty,ato,graphql]
 ---
