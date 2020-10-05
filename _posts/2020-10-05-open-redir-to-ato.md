@@ -28,9 +28,9 @@ Open redirections are usually low severity issues. I decided to dig deeper into 
 
 # Path traversal in the wild:
 
-While using the app as a user, with burp running in the background, I noticed that website made several requests to a Graphql API with different queries. Graphql is an API query language that requires only one endpoint to query and modify data. Several companies use GraphQl as an alternative to REST APIs. You may read more about Graphql [here](https://graphql.org/)
+While using the app as a user, with burp running in the background, I noticed that website made several requests to a GraphQL API with different queries. GraphQL is an API query language that requires only one endpoint to query and modify data. Several companies use GraphQL as an alternative to REST APIs. You may read more about GraphQL [here](https://graphql.org/)
 
-I began analyzing each Graphql request one by one to check any unusual behavior. A mutation query **GetAuthorizedApps** grabbed my attention. This query was used to test the connection of any third-party apps which were connected to the account using OAuth.
+I began analyzing each GraphQL request one by one to check any unusual behavior. A mutation query **GetAuthorizedApps** grabbed my attention. This query was used to test the connection of any third-party apps which were connected to the account using OAuth.
 
 ![graphql-1](/assets/img/open-redir-to-ato/Graphql-1.PNG){: .mx-auto.d-block :}
 
@@ -49,7 +49,7 @@ The root cause of this issue seems to be something in the URL resolving librarie
 
 Let us first understand what actually happens under the hood-
 
-The website uses REST endpoints to fetch, modify, and delete user data as well as a Graphql endpoint, which acts as a proxy for the REST API. The Graph queries would make server-side requests, on behalf of the user, to various REST endpoints to grab and modify the data. For example the Graphql query – 
+The website uses REST endpoints to fetch, modify, and delete user data as well as a GraphQL endpoint, which acts as a proxy for the REST API. The Graph queries would make server-side requests, on behalf of the user, to various REST endpoints to grab and modify the data. For example the GraphQL query – 
 
 ```{“query”:”query GetUser($id: ID!){\n GetUser(id: $id)\n}}”,”variables”:{“ID”:”12345”}}``` 
 would make an internal GET request to ```https://target.com/api/user/12345``` on behalf of the user.
@@ -83,7 +83,7 @@ Remember the request we got on our ngrok after exploiting the SSRF? Let's take a
 
 Notice the cookie header which that sent along with the request. I soon realized that these were my session cookies! This was how the server was authenticating requests made on behalf of the user. However, this discovery was useless unless we could somehow force our victims to make this request and receive their cookies on our server.
 
-My initial idea was to find an XSS, bypass the Same Origin Policy, make the malicious Graphql request on behalf of the victim, and then exfiltrate the cookies.
+My initial idea was to find an XSS, bypass the Same Origin Policy, make the malicious GraphQL request on behalf of the victim, and then exfiltrate the cookies.
 
 
 After spending a day looking for an XSS vulnerability, I didn't find any and gave up. I reported this as a Blind SSRF with the ability to read a partial response and began testing other parts of the app.
@@ -94,7 +94,7 @@ I noticed another query "ZtsplXXXXXXX" whose behavior was very similar to **GetA
 
 However, there is one major difference between the two. **GetAuthorized** was a _mutation_ query while **ZtsplXXXXXXX** was a normal query. As soon as I saw this, I knew I've got a complete account takeover.
 
-The GraphQl endpoint was running on [Apollo](https://www.apollographql.com) server. This was exciting because according to its [docs](https://www.apollographql.com/docs/apollo-server/v1/requests/), the Apollo server also accepts **GET** requests! 
+The GraphQL endpoint was running on [Apollo](https://www.apollographql.com) server. This was exciting because according to its [docs](https://www.apollographql.com/docs/apollo-server/v1/requests/), the Apollo server also accepts **GET** requests! 
 
 An example query in GET request would look like:-
 
@@ -120,7 +120,7 @@ As soon as the victim clicks the above link, their session cookies would be sent
 
 ![ato-exp-1](/assets/img/open-redir-to-ato/ATO-exp-1.PNG)
 
-These issues were responsibly reported to the affected company and are now fixed.
+These issues were responsibly reported to the affected company. The open redirect was fix by dissallowing root redirects. The server also denies to send the cookies to non whitelisted domains for the requests made server side.
 
 # Timeline
 
@@ -128,7 +128,7 @@ Aug 29, 2020 - the initial discovery of open redirect and path traversal
 
 Aug 30, 2020 - escalated and updated the report as an account takeover vulnerability
 
-Sep 18, 2020 - Fix pushed and bounty awarded as critical
+Sep 18, 2020 - Fixes pushed and bounty awarded as critical
 
 **Shoutout to [@y_sodha](https://twitter.com/y_sodha) for proofreading!!**
 
