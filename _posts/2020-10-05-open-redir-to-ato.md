@@ -32,7 +32,7 @@ While using the app as a user, with burp running in the background, I noticed th
 
 I began analyzing each Graphql request one by one to check any unusual behavior. A mutation query **GetAuthorizedApps** grabbed my attention. This query was used to test the connection of any third-party apps which were connected to the account using OAuth.
 
-![graphql-1](/assets/assets/img/open-redir-to-ato/Graphql-1.PNG){: .mx-auto.d-block :}
+![graphql-1](/assets/img/open-redir-to-ato/Graphql-1.PNG){: .mx-auto.d-block :}
 
 The functionality of the query itself wasn't much of an interest. What actually caught my eye was the **id** variable that was sent as a string instead of an Integer. My first assumption was that the value of this variable might be used to make a server-side request to an internal API for example - ``` http://localhost:8080/api/1/:ID ```. I quickly appended a single quote *‘* in hope that the server to throw an error. And the response -
 
@@ -47,7 +47,7 @@ The root cause of this issue seems to be something in the URL resolving librarie
 
 # Issue 3: Path traversal + Open redirect = SSRF!
 
-I created a mindmap of how the infrastructure of this app looked. These were my assumptions-
+Let us first understand what actually happens under the hood-
 
 The website uses REST endpoints to fetch, modify, and delete user data as well as a Graphql endpoint, which acts as a proxy for the REST API. The Graph queries would make server-side requests, on behalf of the user, to various REST endpoints to grab and modify the data. For example the Graphql query – 
 
