@@ -90,7 +90,7 @@ After spending a day looking for an XSS vulnerability, I didn't find any and gav
 
 I noticed another query "ZtsplXXXXXXX" whose behavior was very similar to **GetAuthorized** query because this query used an ID variable to make internal requests too! 
 
-![ssrf-exp-2](/assets/img/open-redir-to-ato/SSRF-2-exp.png)
+![ssrf-exp-2](/assets/img/open-redir-to-ato/SSRF-exp-2.png)
 
 However, there is one major difference between the two. **GetAuthorized** was a _mutation_ query while **ZtsplXXXXXXX** was a normal query. As soon as I saw this, I knew I've got a complete account takeover.
 
