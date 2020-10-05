@@ -5,9 +5,6 @@ subtitle: from open redirect to a complete account takeover
 tags: [ssrf,bugbounty,ato,graphql]
 ---
 
-
-# Intro:
-
 Recently, while testing a web application, I discovered multiple vulnerabilities that on chaining together could have allowed anyone to take over the Victim account. The affected company name is interchanged with "target" for the sake of confidentiality. The blog would detail how these vulnerabilities were discovered, chained, and exploited.
 
 # From “../” to open redirect:
