@@ -120,7 +120,7 @@ As soon as the victim clicks the above link, their session cookies would be sent
 
 ![ato-exp-1](/assets/img/open-redir-to-ato/ATO-exp-1.PNG)
 
-These issues were responsibly reported to the affected company. The open redirect was fix by dissallowing root redirects. The server also denies to send the cookies to non whitelisted domains for the requests made server side.
+These issues were responsibly reported to the affected company. The open redirect was fix by dissallowing root redirects. The server also now denies to send the cookies to non whitelisted domains for the requests made server side.
 
 # Timeline
 
