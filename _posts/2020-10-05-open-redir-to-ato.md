@@ -130,6 +130,6 @@ Aug 30, 2020 - escalated and updated the report as an account takeover vulnerabi
 
 Sep 18, 2020 - Fix pushed and bounty awarded as critical
 
-<h6>Shoutout to <a href - "https://twitter.com/y_sodha">@y_soda</a> for proofreading!!</h6>
+**Shoutout to [@y_sodha](https://twitter.com/y_sodha) for proofreading!!**
 
 <h5>Liked the article, have a question about the post or just wanna chat? feel free to reach out on <a href ="https://twitter.com/ninetyn1ne_">twitter</a> or send an email on <a href="mailto:ninetyn1ne@protonmail.com">ninetyn1ne@protonmail.com</a></h5>
