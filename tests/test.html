@@ -1,5 +1,22 @@
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js" nonce="GzGGzC8U"></script>
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2519556838169149',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v9.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
 
-<div class="fb-comments" data-href="https://ninetyn1ne.github.io/tests/test.html" data-width="777" data-numposts="5"></div>
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
