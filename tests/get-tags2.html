@@ -4,15 +4,13 @@
   </head>
   <body>
     <script type="text/javascript">
-      document.getElementById("res").innerHTML 
-      function ok(lol){
-        document.getElementById("res").innerHTML = lol;
-      }
-        function notok(lol){
-        document.getElementById("res").innerHTML = lol;
-      }
+
       tags = Front.listTags();
-      tags.then(function ok(lol),function notok(lol))
+      tags.then(function ok(lol){
+        document.getElementById("res").innerHTML = lol;
+      },function notok(lol){
+        document.getElementById("res").innerHTML = lol;
+      });
     </script>
     <h1 id="res">
     
