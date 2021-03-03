@@ -4,11 +4,18 @@
   </head>
   <body>
     <script type="text/javascript">
-      Front.listTags().then(function(lol){document.write("<img src =//google.com?lol="+lol);});
-      alert(0);
+      document.getElementById("res").innerHTML 
+      function ok(lol){
+        document.getElementById("res").innerHTML = lol;
+      }
+        function notok(lol){
+        document.getElementById("res").innerHTML = lol;
+      }
+      tags = Front.listTags();
+      tags.then(function ok(lol),function notok(lol))
     </script>
-    <h1>
-      lol
+    <h1 id="res">
+    
     </h1>
   </body>
 </html>
