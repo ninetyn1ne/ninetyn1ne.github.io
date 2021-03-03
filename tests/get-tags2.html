@@ -7,13 +7,26 @@
 
       tags = Front.listTags();
       tags.then(function ok(lol){
-        document.getElementById("res").innerHTML = JSON.stringify(lol);
+        document.getElementById("tag").innerHTML = JSON.stringify(lol);
       },function notok(lol){
-        document.getElementById("res").innerHTML = JSON.stringify(lol);
+        document.getElementById("tag").innerHTML = JSON.stringify(lol);
+      });
+      
+      msgs = Front.listMessages();
+      tags.then(function ok(lol){
+        document.getElementById("msg").innerHTML = JSON.stringify(lol);
+      },function notok(lol){
+        document.getElementById("msg").innerHTML = JSON.stringify(lol);
       });
     </script>
-    <h1 id="res">
+    <h2> Messages </h2>
+    <p id = "msg">
+      
+    </p>
     
-    </h1>
+    <h2> Tags </h2>
+    <p id="tag">
+    
+    </p>
   </body>
 </html>
