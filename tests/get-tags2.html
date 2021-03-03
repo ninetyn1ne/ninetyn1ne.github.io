@@ -13,10 +13,10 @@
       });
       
       msgs = Front.listMessages();
-      msgs.then(function ok(lol){
-        document.getElementById("msg").innerHTML = JSON.stringify(lol);
-      },function notok(lol){
-        document.getElementById("msg").innerHTML = JSON.stringify(lol);
+      msgs.then(function ok_msg(lol_msg){
+        document.getElementById("msg").innerHTML = JSON.stringify(lol_msg);
+      },function notok_msg(lol_msg){
+        document.getElementById("msg").innerHTML = JSON.stringify(lol_msg);
       });
     </script>
     <h2> Messages </h2>
