@@ -7,9 +7,9 @@
 
       tags = Front.listTags();
       tags.then(function ok(lol){
-        document.getElementById("res").innerHTML = lol;
+        document.getElementById("res").innerHTML = JSON.stringify(lol);
       },function notok(lol){
-        document.getElementById("res").innerHTML = lol;
+        document.getElementById("res").innerHTML = JSON.stringify(lol);
       });
     </script>
     <h1 id="res">
