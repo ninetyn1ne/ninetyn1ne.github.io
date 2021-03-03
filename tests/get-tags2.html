@@ -12,7 +12,7 @@
         document.getElementById("tag").innerHTML = JSON.stringify(lol);
       });
       
-      msgs = Front.listMessages();
+      msgs = Front.listInboxes();
       msgs.then(function ok_msg(lol_msg){
         document.getElementById("msg").innerHTML = JSON.stringify(lol_msg);
       },function notok_msg(lol_msg){
