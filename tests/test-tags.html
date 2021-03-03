@@ -1,14 +1,10 @@
 <html>
   <head>
-    <script src="https://dl.frontapp.com/libs/frontjs.min.js"></script>
+    <script type="text/javascript" src="//dl.frontapp.com/libs/plugin-sdk-1.0.1.min.js"></script>
   </head>
   <body>
     <script type="text/javascript">
-Front.fetchAllowedTags(function (tags) {
-    if (!tags) return;
-
-    alert(tags);
-});
+      Front.listTags(function (lol){alert(JSON.stringify(lol));})
     </script>
   </body>
 </html>
