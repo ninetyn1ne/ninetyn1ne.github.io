@@ -1,11 +1,14 @@
 <html>
   <head>
-    <script type="text/javascript" src="https://dl.frontapp.com/libs/plugin-sdk-1.0.1.min.js"></script>
+    <script src="https://dl.frontapp.com/libs/frontjs.min.js"></script>
   </head>
   <body>
     <script type="text/javascript">
-     a = "javascript:alert(document.domain);"
-     Front.openUrlInPopup(a);
+Front.fetchAllowedTags(function (tags) {
+    if (!tags) return;
+
+    console.log(tags);
+});
     </script>
   </body>
 </html>
