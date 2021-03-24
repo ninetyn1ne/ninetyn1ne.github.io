@@ -15,7 +15,7 @@ makepostreq(ic_val,req_token);
 
 function makepostreq(ic_val,req_token){
 
-	var body = "client_id=1vewmllcy3lwa4y7b3yjft4xn6g9k8qf&response_type=code&redirect_uri=https%3A%2F%2Fninetyn1ne.github.io%2Ftest&scoperroot_readonly+root_readwrite+manage_groups+manage_webhook+manage_enterprise_properties+manage_data_retention+item_execute_integration+manage_app_users+manage_managed_users&folder_id=&file_id=&parent_token=&parent_service_id=&service_action_id=&doconsent=doconsent&ic="+ic_val+"&consent_accept=Grant+access+to+Box&request_token="+req_token;
+	var body = "client_id=1vewmllcy3lwa4y7b3yjft4xn6g9k8qf&response_type=code&redirect_uri=https%3A%2F%2Fninetyn1ne.github.io%2Ftest&scope=root_readonly+root_readwrite+manage_groups+manage_webhook+manage_enterprise_properties+manage_data_retention+item_execute_integration+manage_app_users+manage_managed_users&folder_id=&file_id=&parent_token=&parent_service_id=&service_action_id=&doconsent=doconsent&ic="+ic_val+"&consent_accept=Grant+access+to+Box&request_token="+req_token;
 
 	var form_url = "https://app.box.com/api/oauth2/authorize?client_id=1vewmllcy3lwa4y7b3yjft4xn6g9k8qf&response_type=code";
 
